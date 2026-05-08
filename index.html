@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root { --gold: #d4af37; }
-        body { background-color: #0a0a0a; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
+        body { background-color: #0a0a0a; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; scroll-behavior: smooth; }
         .font-serif { font-family: 'Playfair Display', serif; }
         .font-script { font-family: 'Great Vibes', cursive; }
         .lang-hidden { display: none !important; }
@@ -35,13 +35,17 @@
             position: fixed; top: 20px; right: 20px; z-index: 100;
             background: var(--gold); color: black; padding: 10px 20px;
             border-radius: 30px; font-weight: bold; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
 
         /* Texto Inolvidable Claro */
         .highlight-text {
-            color: #ffffff; /* Letras claras */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #ffffff !important;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
         }
+
+        .card-hover { transition: all 0.3s ease; border: 1px solid rgba(212, 175, 55, 0.1); }
+        .card-hover:hover { transform: translateY(-10px); border-color: var(--gold); }
     </style>
 </head>
 <body>
@@ -66,58 +70,88 @@
         </div>
     </header>
 
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-zinc-900 rounded-lg overflow-hidden border border-gold/20">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" class="w-full h-64 object-cover">
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            
+            <div class="card-hover bg-zinc-900 rounded-2xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" class="w-full h-72 object-cover">
                 <div class="p-8">
                     <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-es">Mixología de Autor</h4>
                     <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Signature Mixology</h4>
-                    <p class="text-gray-300 text-xl lang-es">Cócteles exclusivos diseñados con ingredientes de la más alta calidad.</p>
-                    <p class="text-gray-300 text-xl lang-en lang-hidden">Exclusive cocktails designed with top-quality ingredients.</p>
+                    <p class="text-gray-300 text-lg lang-es">Cócteles exclusivos diseñados con ingredientes de la más alta calidad para paladares exigentes.</p>
+                    <p class="text-gray-300 text-lg lang-en lang-hidden">Exclusive cocktails designed with top-quality ingredients for demanding palates.</p>
                 </div>
             </div>
+
+            <div class="card-hover bg-zinc-900 rounded-2xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=600&q=80" class="w-full h-72 object-cover">
+                <div class="p-8">
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-es">Barra Móvil</h4>
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Mobile Bar</h4>
+                    <p class="text-gray-300 text-lg lang-es">Estaciones elegantes y totalmente equipadas que se adaptan con estilo a cualquier espacio físico.</p>
+                    <p class="text-gray-300 text-lg lang-en lang-hidden">Elegant and fully equipped stations that stylishly adapt to any physical space.</p>
+                </div>
             </div>
+
+            <div class="card-hover bg-zinc-900 rounded-2xl overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" class="w-full h-72 object-cover">
+                <div class="p-8">
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-es">Eventos Elite</h4>
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Elite Events</h4>
+                    <p class="text-gray-300 text-lg lang-es">Atención personalizada para bodas, eventos corporativos y celebraciones privadas exclusivas.</p>
+                    <p class="text-gray-300 text-lg lang-en lang-hidden">Personalized attention for weddings, corporate events, and exclusive private celebrations.</p>
+                </div>
+            </div>
+
+        </div>
     </section>
 
-    <section class="py-24 hero-bg text-center">
+    <section class="py-28 hero-bg text-center">
         <div class="relative z-10">
-            <p class="font-script text-5xl text-[#d4af37] mb-2 lang-es">Convertimos tu evento</p>
-            <p class="font-script text-5xl text-[#d4af37] mb-2 lang-en lang-hidden">We turn your event</p>
+            <p class="font-script text-6xl text-[#d4af37] mb-4 lang-es">Convertimos tu evento</p>
+            <p class="font-script text-6xl text-[#d4af37] mb-4 lang-en lang-hidden">We turn your event</p>
+            <h2 class="text-4xl md:text-6xl font-bold uppercase mb-8 lang-es">En una experiencia</h2>
+            <h2 class="text-4xl md:text-6xl font-bold uppercase mb-8 lang-en lang-hidden">Into an experience</h2>
             
-            <div class="inline-block bg-[#d4af37] px-12 py-4 transform -skew-x-12 my-6">
-                <span class="highlight-text font-black text-5xl md:text-7xl uppercase italic lang-es">Inolvidable</span>
-                <span class="highlight-text font-black text-5xl md:text-7xl uppercase italic lang-en lang-hidden">Unforgettable</span>
+            <div class="inline-block bg-[#d4af37] px-14 py-5 transform -skew-x-12 shadow-2xl">
+                <span class="highlight-text font-black text-5xl md:text-8xl uppercase italic lang-es">Inolvidable</span>
+                <span class="highlight-text font-black text-5xl md:text-8xl uppercase italic lang-en lang-hidden">Unforgettable</span>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6 bg-zinc-950">
+    <footer class="py-24 px-6 bg-zinc-950 border-t border-gold/10">
         <div class="max-w-4xl mx-auto text-center">
-            <h3 class="text-4xl font-serif mb-4 lang-es">¿Planeando un evento?</h3>
-            <h3 class="text-4xl font-serif mb-4 lang-en lang-hidden">Planning an event?</h3>
-            <p class="text-xl text-gray-400 mb-12 lang-es">¡Nos encantaría ser parte de tu celebración! Contáctanos directamente:</p>
-            <p class="text-xl text-gray-400 mb-12 lang-en lang-hidden">We'd love to be part of your celebration! Contact us directly:</p>
+            <h3 class="text-4xl font-serif mb-6 lang-es">¿Planeando un evento?</h3>
+            <h3 class="text-4xl font-serif mb-6 lang-en lang-hidden">Planning an event?</h3>
+            <p class="text-xl text-gray-400 mb-14 lang-es">¡Nos encantaría ser parte de tu celebración! Hablemos por teléfono o mensaje:</p>
+            <p class="text-xl text-gray-400 mb-14 lang-en lang-hidden">We'd love to be part of your celebration! Let's talk via phone or message:</p>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-zinc-900 p-8 rounded-2xl border border-[#d4af37]/30 hover:border-[#d4af37] transition">
-                    <i class="fab fa-whatsapp text-4xl text-[#d4af37] mb-4"></i>
-                    <h4 class="text-2xl font-bold mb-2">MIRIAN</h4>
-                    <a href="tel:6307093106" class="text-2xl block text-white hover:text-[#d4af37]">(630) 709-3106</a>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="bg-zinc-900 p-10 rounded-3xl border border-[#d4af37]/20 hover:border-[#d4af37] transition-all group">
+                    <div class="bg-[#d4af37] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-phone-alt text-black text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2 tracking-widest">MIRIAN</h4>
+                    <a href="tel:6307093106" class="text-2xl block text-[#d4af37] font-bold hover:text-white transition">(630) 709-3106</a>
                 </div>
-                <div class="bg-zinc-900 p-8 rounded-2xl border border-[#d4af37]/30 hover:border-[#d4af37] transition">
-                    <i class="fab fa-whatsapp text-4xl text-[#d4af37] mb-4"></i>
-                    <h4 class="text-2xl font-bold mb-2">JOSÉ</h4>
-                    <a href="tel:7738584080" class="text-2xl block text-white hover:text-[#d4af37]">(773) 858-4080</a>
+                <div class="bg-zinc-900 p-10 rounded-3xl border border-[#d4af37]/20 hover:border-[#d4af37] transition-all group">
+                    <div class="bg-[#d4af37] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition">
+                        <i class="fas fa-phone-alt text-black text-2xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2 tracking-widest">JOSÉ</h4>
+                    <a href="tel:7738584080" class="text-2xl block text-[#d4af37] font-bold hover:text-white transition">(773) 858-4080</a>
                 </div>
             </div>
+            
+            <p class="mt-20 text-gray-600 uppercase tracking-[0.5em] text-sm">P&G Mobile Bar © 2026</p>
         </div>
     </footer>
 
     <script>
-        // Generador de estrellas
+        // Generador de estrellas animadas
         const container = document.getElementById('stars');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 60; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             const size = Math.random() * 3 + 'px';
