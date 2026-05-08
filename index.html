@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&G Mobile Bar - Coctelería y Mixología</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #d4af37;
+            --dark-gold: #b8860b;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .font-serif-title { font-family: 'Playfair Display', serif; }
+        .font-script { font-family: 'Great Vibes', cursive; }
+        .text-gold { color: var(--gold); }
+        .bg-gold { background-color: var(--gold); }
+        .border-gold { border-color: var(--gold); }
+        
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .feature-icon {
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            padding: 20px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero Section -->
+    <section class="hero-gradient min-h-screen flex flex-col items-center justify-center text-center px-4 py-12">
+        <div class="mb-4">
+            <h1 class="text-6xl md:text-8xl font-serif-title mb-0 tracking-tighter">P&G</h1>
+            <div class="flex items-center justify-center gap-4">
+                <div class="h-px bg-gold w-12"></div>
+                <p class="text-gold tracking-[0.3em] font-bold uppercase text-sm md:text-xl">Mobile Bar</p>
+                <div class="h-px bg-gold w-12"></div>
+            </div>
+        </div>
+
+        <div class="mt-8 mb-4">
+            <h2 class="text-4xl md:text-6xl font-bold uppercase leading-none">Coctelería y</h2>
+            <h2 class="text-4xl md:text-6xl font-bold uppercase leading-none text-gold">Mixología</h2>
+            <p class="font-script text-5xl md:text-7xl text-white mt-2">Completa</p>
+        </div>
+
+        <div class="flex items-center gap-2 mt-6">
+            <span class="text-gold text-xl">➤</span>
+            <p class="uppercase tracking-widest text-sm md:text-lg font-light">Llevamos la experiencia a tu evento</p>
+            <span class="text-gold text-xl"><span style="transform: rotate(180deg); display: inline-block;">➤</span></span>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div class="feature-icon">
+                    <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-gold font-bold uppercase text-sm mb-1">Barra Móvil</h3>
+                <p class="text-xs text-gray-300">Totalmente equipada</p>
+            </div>
+            <div>
+                <div class="feature-icon">
+                    <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+                </div>
+                <h3 class="text-gold font-bold uppercase text-sm mb-1">Mixología</h3>
+                <p class="text-xs text-gray-300">Cócteles clásicos y de autor</p>
+            </div>
+            <div>
+                <div class="feature-icon">
+                    <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-gold font-bold uppercase text-sm mb-1">Eventos</h3>
+                <p class="text-xs text-gray-300">Privados, sociales y corporativos</p>
+            </div>
+            <div>
+                <div class="feature-icon">
+                    <svg class="w-10 h-10 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                </div>
+                <h3 class="text-gold font-bold uppercase text-sm mb-1">Experiencia</h3>
+                <p class="text-xs text-gray-300">Servicio profesional y personalizado</p>
+            </div>
+        </div>
+
+        <div class="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-light">
+            <span class="flex items-center gap-2"><span class="text-gold">•</span> Cócteles de autor</span>
+            <span class="flex items-center gap-2"><span class="text-gold">•</span> Ingredientes premium</span>
+            <span class="flex items-center gap-2"><span class="text-gold">•</span> Bartenders profesionales</span>
+            <span class="flex items-center gap-2"><span class="text-gold">•</span> Atención personalizada</span>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-zinc-900 text-center px-4">
+        <p class="font-script text-4xl text-gold mb-2">Convertimos tu evento</p>
+        <h2 class="text-3xl md:text-5xl font-bold uppercase mb-8">En una experiencia</h2>
+        
+        <div class="inline-block relative px-8 py-3">
+            <div class="absolute inset-0 bg-gold transform -skew-x-12"></div>
+            <span class="relative text-black font-black text-2xl md:text-4xl tracking-tighter uppercase italic">Inolvidable</span>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer class="py-12 px-4">
+        <div class="max-w-4xl mx-auto border-2 border-gold rounded-xl p-8 md:p-12 relative">
+            <div class="grid md:grid-cols-2 gap-12 text-center items-center">
+                
+                <!-- Contact 1 -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-gold p-2 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                    </div>
+                    <h4 class="font-bold tracking-widest text-lg">MIRIAN</h4>
+                    <a href="tel:6307093106" class="text-gold text-xl mt-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.429 4.429l.773-1.548a1 1 0 011.06-.539l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        (630) 709-3106
+                    </a>
+                </div>
+
+                <!-- Contact 2 -->
+                <div class="flex flex-col items-center">
+                    <div class="bg-gold p-2 rounded-full mb-4">
+                        <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 20 20"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path></svg>
+                    </div>
+                    <h4 class="font-bold tracking-widest text-lg">JOSÉ</h4>
+                    <a href="tel:7738584080" class="text-gold text-xl mt-2 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 004.429 4.429l.773-1.548a1 1 0 011.06-.539l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                        (773) 858-4080
+                    </a>
+                </div>
+
+            </div>
+            
+            <!-- Center Icon Decor -->
+            <div class="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <svg class="w-12 h-12 text-gold opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
