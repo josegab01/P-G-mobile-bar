@@ -1,182 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>P&G Mobile Bar - Premium Experience</title>
+    <title>P&G Mobile Bar - Experiencia Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;700&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/releases/v5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --gold: #d4af37;
-            --dark-gold: #b8860b;
-        }
-        body {
-            background-color: #0a0a0a;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+        :root { --gold: #d4af37; }
+        body { background-color: #0a0a0a; color: #fff; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         .font-serif { font-family: 'Playfair Display', serif; }
         .font-script { font-family: 'Great Vibes', cursive; }
-        .text-gold { color: var(--gold); }
-        
-        /* Animación suave para cambio de idioma */
         .lang-hidden { display: none !important; }
         
+        /* Efecto de Estrellas Animadas */
+        .stars-container {
+            position: absolute; width: 100%; height: 100%;
+            top: 0; left: 0; overflow: hidden; z-index: 1;
+        }
+        .star {
+            position: absolute; background: white; border-radius: 50%;
+            opacity: 0.5; animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.2); } }
+
         .hero-bg {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            position: relative;
         }
 
-        .card-drink {
-            transition: transform 0.3s ease;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        .card-drink:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-        }
-        
         .floating-lang {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 50;
-            background: var(--gold);
-            color: black;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            position: fixed; top: 20px; right: 20px; z-index: 100;
+            background: var(--gold); color: black; padding: 10px 20px;
+            border-radius: 30px; font-weight: bold; cursor: pointer;
+        }
+
+        /* Texto Inolvidable Claro */
+        .highlight-text {
+            color: #ffffff; /* Letras claras */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
-    <!-- Botón de Idioma -->
-    <button onclick="toggleLanguage()" class="floating-lang" id="langBtn">
-        Switch to English
-    </button>
+    <button onclick="toggleLanguage()" class="floating-lang" id="langBtn">Switch to English</button>
 
-    <!-- Hero Section -->
     <header class="hero-bg min-h-screen flex flex-col items-center justify-center text-center px-6">
-        <div class="mb-6">
-            <h1 class="text-7xl md:text-9xl font-serif mb-2">P&G</h1>
-            <p class="text-gold tracking-[0.4em] font-bold uppercase text-xl md:text-2xl">Mobile Bar</p>
-        </div>
+        <div class="stars-container" id="stars"></div>
+        
+        <div class="relative z-10">
+            <div class="mb-6">
+                <h1 class="text-7xl md:text-9xl font-serif mb-2">P&G</h1>
+                <p class="text-[#d4af37] tracking-[0.4em] font-bold uppercase text-xl md:text-2xl">Mobile Bar</p>
+            </div>
 
-        <div class="mt-8">
-            <h2 class="lang-es text-5xl md:text-7xl font-bold uppercase leading-tight">Coctelería y <br><span class="text-gold">Mixología</span></h2>
-            <h2 class="lang-en lang-hidden text-5xl md:text-7xl font-bold uppercase leading-tight">Cocktails & <br><span class="text-gold">Mixology</span></h2>
-            <p class="font-script text-6xl md:text-8xl text-white mt-4 lang-es">Completa</p>
-            <p class="font-script text-6xl md:text-8xl text-white mt-4 lang-en lang-hidden">Full Experience</p>
+            <div class="mt-8">
+                <h2 class="lang-es text-5xl md:text-7xl font-bold uppercase leading-tight">Coctelería y <br><span class="text-[#d4af37]">Mixología</span></h2>
+                <h2 class="lang-en lang-hidden text-5xl md:text-7xl font-bold uppercase leading-tight">Cocktails & <br><span class="text-[#d4af37]">Mixology</span></h2>
+                <p class="font-script text-6xl md:text-8xl text-white mt-4 lang-es">Completa</p>
+                <p class="font-script text-6xl md:text-8xl text-white mt-4 lang-en lang-hidden">Full Experience</p>
+            </div>
         </div>
     </header>
 
-    <!-- Frase Principal -->
-    <section class="py-20 bg-black text-center px-6 border-y border-gold/20">
-        <h3 class="lang-es text-3xl md:text-5xl font-light italic text-gray-300">"Llevamos la experiencia a tu evento"</h3>
-        <h3 class="lang-en lang-hidden text-3xl md:text-5xl font-light italic text-gray-300">"Bringing the experience to your event"</h3>
-    </section>
-
-    <!-- Servicios / Galería -->
     <section class="py-20 px-6 max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-zinc-900 rounded-lg overflow-hidden border border-gold/20">
+                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-es">Mixología de Autor</h4>
+                    <h4 class="text-[#d4af37] font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Signature Mixology</h4>
+                    <p class="text-gray-300 text-xl lang-es">Cócteles exclusivos diseñados con ingredientes de la más alta calidad.</p>
+                    <p class="text-gray-300 text-xl lang-en lang-hidden">Exclusive cocktails designed with top-quality ingredients.</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section class="py-24 hero-bg text-center">
+        <div class="relative z-10">
+            <p class="font-script text-5xl text-[#d4af37] mb-2 lang-es">Convertimos tu evento</p>
+            <p class="font-script text-5xl text-[#d4af37] mb-2 lang-en lang-hidden">We turn your event</p>
             
-            <!-- Item 1 -->
-            <div class="card-drink bg-zinc-900 rounded-lg">
-                <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="Cocktail" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-es">Mixología de Autor</h4>
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Signature Mixology</h4>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-es">Cócteles exclusivos diseñados con ingredientes premium y técnicas artesanales.</p>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-en lang-hidden">Exclusive cocktails designed with premium ingredients and artisanal techniques.</p>
-                </div>
+            <div class="inline-block bg-[#d4af37] px-12 py-4 transform -skew-x-12 my-6">
+                <span class="highlight-text font-black text-5xl md:text-7xl uppercase italic lang-es">Inolvidable</span>
+                <span class="highlight-text font-black text-5xl md:text-7xl uppercase italic lang-en lang-hidden">Unforgettable</span>
             </div>
-
-            <!-- Item 2 -->
-            <div class="card-drink bg-zinc-900 rounded-lg">
-                <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=600&q=80" alt="Barra" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-es">Barra Móvil</h4>
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Mobile Bar</h4>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-es">Estaciones elegantes y totalmente equipadas que se adaptan a cualquier espacio.</p>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-en lang-hidden">Elegant and fully equipped stations that adapt to any space or venue.</p>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="card-drink bg-zinc-900 rounded-lg">
-                <img src="https://images.unsplash.com/photo-1574096079513-d8259312b785?auto=format&fit=crop&w=600&q=80" alt="Bebidas" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-es">Eventos Elite</h4>
-                    <h4 class="text-gold font-bold text-2xl uppercase mb-4 lang-en lang-hidden">Elite Events</h4>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-es">Atención personalizada para bodas, eventos corporativos y fiestas privadas.</p>
-                    <p class="text-gray-400 text-lg leading-relaxed lang-en lang-hidden">Personalized service for weddings, corporate events, and private parties.</p>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- Banner Inolvidable -->
-    <section class="py-24 hero-bg text-center relative">
-        <p class="font-script text-5xl text-gold mb-2 lang-es">Convertimos tu evento</p>
-        <p class="font-script text-5xl text-gold mb-2 lang-en lang-hidden">We turn your event</p>
-        <h2 class="text-4xl md:text-6xl font-bold uppercase mb-10 lang-es">En una experiencia</h2>
-        <h2 class="text-4xl md:text-6xl font-bold uppercase mb-10 lang-en lang-hidden">Into an experience</h2>
-        
-        <div class="inline-block bg-gold px-12 py-4 transform -skew-x-12">
-            <span class="text-black font-black text-4xl md:text-6xl uppercase italic tracking-tighter lang-es">Inolvidable</span>
-            <span class="text-black font-black text-4xl md:text-6xl uppercase italic tracking-tighter lang-en lang-hidden">Unforgettable</span>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <footer class="py-20 px-6 bg-black">
-        <div class="max-w-4xl mx-auto border-2 border-gold rounded-3xl p-10 md:p-16 text-center">
-            <h3 class="text-3xl font-serif mb-12 lang-es">Contacta con Nosotros</h3>
-            <h3 class="text-3xl font-serif mb-12 lang-en lang-hidden">Contact Us</h3>
+    <footer class="py-20 px-6 bg-zinc-950">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-4xl font-serif mb-4 lang-es">¿Planeando un evento?</h3>
+            <h3 class="text-4xl font-serif mb-4 lang-en lang-hidden">Planning an event?</h3>
+            <p class="text-xl text-gray-400 mb-12 lang-es">¡Nos encantaría ser parte de tu celebración! Contáctanos directamente:</p>
+            <p class="text-xl text-gray-400 mb-12 lang-en lang-hidden">We'd love to be part of your celebration! Contact us directly:</p>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-4">
-                    <div class="text-gold text-4xl"><i class="fas fa-user-circle"></i></div>
-                    <h4 class="text-2xl font-bold tracking-widest">MIRIAN</h4>
-                    <a href="tel:6307093106" class="text-gold text-2xl hover:underline">(630) 709-3106</a>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-zinc-900 p-8 rounded-2xl border border-[#d4af37]/30 hover:border-[#d4af37] transition">
+                    <i class="fab fa-whatsapp text-4xl text-[#d4af37] mb-4"></i>
+                    <h4 class="text-2xl font-bold mb-2">MIRIAN</h4>
+                    <a href="tel:6307093106" class="text-2xl block text-white hover:text-[#d4af37]">(630) 709-3106</a>
                 </div>
-                <div class="space-y-4">
-                    <div class="text-gold text-4xl"><i class="fas fa-user-circle"></i></div>
-                    <h4 class="text-2xl font-bold tracking-widest">JOSÉ</h4>
-                    <a href="tel:7738584080" class="text-gold text-2xl hover:underline">(773) 858-4080</a>
+                <div class="bg-zinc-900 p-8 rounded-2xl border border-[#d4af37]/30 hover:border-[#d4af37] transition">
+                    <i class="fab fa-whatsapp text-4xl text-[#d4af37] mb-4"></i>
+                    <h4 class="text-2xl font-bold mb-2">JOSÉ</h4>
+                    <a href="tel:7738584080" class="text-2xl block text-white hover:text-[#d4af37]">(773) 858-4080</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Generador de estrellas
+        const container = document.getElementById('stars');
+        for (let i = 0; i < 50; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+            container.appendChild(star);
+        }
+
         let isEnglish = false;
         function toggleLanguage() {
             isEnglish = !isEnglish;
-            const esElements = document.querySelectorAll('.lang-es');
-            const enElements = document.querySelectorAll('.lang-en');
-            const btn = document.getElementById('langBtn');
-
-            if(isEnglish) {
-                esElements.forEach(el => el.classList.add('lang-hidden'));
-                enElements.forEach(el => el.classList.remove('lang-hidden'));
-                btn.innerText = "Cambiar a Español";
-            } else {
-                esElements.forEach(el => el.classList.remove('lang-hidden'));
-                enElements.forEach(el => el.classList.add('lang-hidden'));
-                btn.innerText = "Switch to English";
-            }
+            document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('lang-hidden', isEnglish));
+            document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('lang-hidden', !isEnglish));
+            document.getElementById('langBtn').innerText = isEnglish ? "Cambiar a Español" : "Switch to English";
         }
     </script>
 </body>
